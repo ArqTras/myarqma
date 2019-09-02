@@ -1,0 +1,70 @@
+{
+  "daemon-url" :
+  {
+    "_comment" : "RPC urls to monero deamon",
+    "mainnet"  : "127.0.0.1:19994",
+    "testnet"  : "http://127.0.0.1:29994",
+    "stagenet" : "http://127.0.0.1:39994"
+  },
+  "blockchain-path" :
+  {
+    "_comment" : "if paths are empty, default Monero paths will be used",
+    "mainnet"  : "/home/arqma/.arqma/lmdb",
+    "testnet"  : "",
+    "stagenet" : ""
+  },
+  "database" :
+  {
+    "_comment" : "how should the backend connect to the mysql database",
+    "url"      : "127.0.0.1",
+    "port"     : 3306,
+    "dbname"   : "openmonero",
+    "user"     : "root",
+    "password" : "root"
+  },
+  "database_test":
+  {
+    "_comment" : "how should the backend connect to the test mysql database",
+    "url"      : "127.0.0.1",
+    "port"     : 3306,
+    "dbname"   : "openmonero_test",
+    "user"     : "root",
+    "password" : "root"
+  },
+  "wallet_import" :
+  {
+    "_comment": "if fee is 0, then importing is free. fee is in base 1e12, e.g., 0.1 xmr is 0.1 x 1e12 = 100000000000",
+    "fee"     : 0,
+    "testnet" :
+    {
+      "address" : "",
+      "viewkey" : ""
+    },
+    "mainnet" :
+    {
+      "_comment": "these are official monero project donation address and viewkey. change it to yours",
+      "address" : "",
+      "viewkey" : ""
+    },
+    "stagenet" :
+    {
+      "address" : "",
+      "viewkey" : ""
+    }
+  },
+  "refresh_block_status_every_seconds" : 10,
+  "blocks_search_lookahead"            : 200,
+  "search_thread_life_in_seconds"      : 120,
+  "max_number_of_blocks_to_import"     : 132000,
+  "mysql_ping_every_seconds"           : 200,
+  "_comment": "if the threadpool_size (no of threads) below is 0, its size is automaticly set based on your cpu. If its not 0, the value specified is used instead",
+  "blockchain_treadpool_size"          : 1,
+  "ssl" :
+  {
+    "enable" : false,
+    "_comment": "below are example paths to crt and key files need to be given",
+    "ssl-key": "file:///tmp/server.key",
+    "ssl-crt": "file:///tmp/server.crt",
+    "dh-pem" : "file:///tmp/dh2048.pem"
+  }
+}
